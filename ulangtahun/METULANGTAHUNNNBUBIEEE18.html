@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ULANG TAHUN BUBBIE KE 18</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #f0f0f0;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .envelope {
+            position: relative;
+            width: 300px;
+            height: 200px;
+            background: #f5deb3;
+            border: 2px solid #d2b48c;
+            border-radius: 5px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .envelope .flap {
+            position: absolute;
+            width: 100%;
+            height: 50%;
+            background: #d2b48c;
+            top: 0;
+            left: 0;
+            transform-origin: top;
+            transition: transform 0.5s ease-in-out;
+        }
+        .envelope .bottom {
+            position: absolute;
+            width: 100%;
+            height: 50%;
+            background: #f5deb3;
+            bottom: 0;
+            left: 0;
+        }
+        .envelope .name {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #6b4226;
+        }
+        .letter {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            width: 280px;
+            max-height: 80vh;
+            background: white;
+            border: 1px solid #d2b48c;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow-y: auto;
+            transition: transform 0.5s ease-in-out;
+            z-index: 10;
+            opacity: 0;
+        }
+        .letter.show {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+        .letter h1 {
+            color: #6b4226;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+        .photo-section, .video-section {
+            margin: 10px 0;
+        }
+        .photo-section img, .video-section video {
+            max-width: 100%;
+            border: 2px solid #d2b48c;
+            border-radius: 5px;
+        }
+        .close-btn {
+            display: block;
+            margin: 20px auto 0;
+            padding: 10px 20px;
+            background: #d2b48c;
+            color: white;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .close-btn:hover {
+            background: #6b4226;
+        }
+        .decor {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        .decor .circle {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: rgba(255, 223, 186, 0.5);
+            border-radius: 50%;
+            animation: float 6s infinite ease-in-out;
+        }
+        .decor .circle:nth-child(1) {
+            top: 10%;
+            left: 20%;
+            animation-delay: 0s;
+        }
+        .decor .circle:nth-child(2) {
+            top: 30%;
+            left: 70%;
+            animation-delay: 2s;
+        }
+        .decor .circle:nth-child(3) {
+            top: 70%;
+            left: 40%;
+            animation-delay: 4s;
+        }
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <audio id="background-music" loop>
+        <source src="tulus.mp3" type="audio/mp3">
+        Your browser does not support the audio tag.
+    </audio>
+
+    <div class="container">
+        <div class="decor">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+        <div class="envelope" id="envelope">
+            <div class="flap" id="flap"></div>
+            <div class="bottom">
+                <div class="name">HAPPY BIRTHDAY DINDAAA</div>
+            </div>
+        </div>
+        <div class="letter" id="letter">
+            <h1>SELAMAT ULANG TAHUNNN PACARKUUUU !!</h1>
+            <p>halooo dindaa maaf yaa rigit ngado nya cuman segituu rigit minta maaf yaa</p>
+            <p>maaf juga rigit ga bisa bales kado yang kemaren huhuu maaf banget yaa</p>
+            <p>tapi asli sie rigit bingung mau ngado apa takut nya dinda ga suka sama kado nya</p>
+            <p>humss maaf yaa eh iya rigit tu sayanggg banget sama dinda lop dinda sekebon love you</p>
+            <p>maaf yaa rigit ga bisa jadi pacar yang baik tapii rigit janji rigit bakal jadii</p>
+            <p>pacar yang baikkk untuk dindaa hiihihihihi semoga dinda di umur 18 tahun ini</p>
+            <p>jadi lebih baik semoga wish dinda juga tercapai orang orang di sekitar dinda lebih baik</p>
+            <p>love youuu banyak banyak dindaaa sayanggg rigit doa in dinda jadi lebih baik di kedepan nya</p>
+            <p> SALAM DARI BRONDONG KAMU RIGIT XIXIXIXIXI</p>
+            <div class="photo-section">
+                <h3>Photo</h3>
+                <img src="ultah1.jpg" alt="Birthday Photo">
+            </div>
+            <div class="video-section">
+                <h3>Video</h3>
+                <video id="video" controls>
+                    <source src="VIDIOULTAH1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <button class="close-btn" id="close-btn">Close</button>
+        </div>
+    </div>
+
+    <script>
+        const envelope = document.getElementById('envelope');
+        const flap = document.getElementById('flap');
+        const letter = document.getElementById('letter');
+        const closeBtn = document.getElementById('close-btn');
+        const music = document.getElementById('background-music');
+        const video = document.getElementById('video');
+
+        envelope.addEventListener('click', () => {
+            flap.style.transform = 'rotateX(180deg)';
+
+            setTimeout(() => {
+                letter.classList.add('show');
+            }, 500);
+
+            music.volume = 1;
+            music.play();
+        });
+
+        closeBtn.addEventListener('click', () => {
+            letter.classList.remove('show');
+            setTimeout(() => {
+                flap.style.transform = 'rotateX(0)';
+            }, 500);
+        });
+
+        video.addEventListener('play', () => {
+            music.volume = 0.2;
+        });
+
+        video.addEventListener('pause', () => {
+            music.volume = 1;
+        });
+
+        video.addEventListener('ended', () => {
+            music.volume = 1;
+        });
+    </script>
+</body>
+</html>
